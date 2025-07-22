@@ -16,9 +16,9 @@ plt.rcParams['axes.unicode_minus'] = False
 
 # 1. 파라미터 설정
 N = 1000           # 총 인구 수
-I0 = 1             # 정보에 노출된 초기 사람 수
-R0 = 0             # 정보에 흥미를 잃은 초기 사람 수
-S0 = N - I0 - R0   # 정보에 노출될 가능성이 있는 초기 사람 수
+I0 = 1             # (초기) 정보를 접하지 않은 사람 수
+R0 = 0             # (초기) 정보를 접하고 공유하는 사람 수
+S0 = N - I0 - R0   # (초기) 정보를 더 이상 공유하지 않는 사람 수
 
 beta = 2.5         # 정보 전파율
 gamma = 0.5        # 정보 소멸률
@@ -43,9 +43,9 @@ S, I, R = ret.T
 
 # 3. 그래프 그리기 (시각화)
 plt.figure(figsize=(10, 6))
-plt.plot(t, S, 'b', label='정보에 노출될 가능성이 있는 사람 S(t)')
-plt.plot(t, I, 'r', label='정보에 노출된 사람 I(t)')
-plt.plot(t, R, 'g', label='정보에 흥미를 잃은 사람 R(t)')
+plt.plot(t, S, 'b', label='정보를 접하지 않은 사람 S(t)')
+plt.plot(t, I, 'r', label='정보를 접하고 공유하는 사람 I(t)')
+plt.plot(t, R, 'g', label='정보를 더 이상 공유하지 않는 사람 R(t)')
 plt.xlabel('시간 (일)')
 plt.ylabel('인구 수')
 plt.title(f'정보 확산 모형 시뮬레이션 (β={beta}, γ={gamma})')
