@@ -27,7 +27,6 @@ gamma = 0.2        # 회복률, 코로나 유행 초기는 0.1, 유행 이후는
 t = np.linspace(0, 160, 160)
 
 # 2. SIR 미분방정식 정의
-# ───────────────────────────────────────
 def deriv(y, t, N, beta, gamma):
     S, I, R = y
     dSdt = -beta * S * I / N
